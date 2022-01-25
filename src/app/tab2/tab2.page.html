@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Liste over Data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Liste over Data</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <section>
+      <!-- Køre getData som får den data der er i listData -->
+      <ion-button (click)="getData()" expand="block" color="secondary">Hent Data</ion-button>
+    </section>
+  </ion-list>
+
+
+
+<ion-list>
+  <!-- Kalder Reorder event som står for at rykke rundt på listen -->
+  <ion-reorder-group (ionItemReorder)="Reorder($event)" disabled="false">
+     <!-- Deklarere name af listData og i står for index -->
+        <ion-item *ngFor="let name of listData; let i = index;">
+          <!-- Viser indholdet af databasen -->
+          <ion-label>{{ name }}</ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+  </ion-reorder-group>
+</ion-list>
+
+
+
+
+</ion-content>

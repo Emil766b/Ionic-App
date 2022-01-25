@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tilføj Opgaver
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tilføj Data</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- input header -->
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-label>
+        <b>Input</b>
+      </ion-label>
+    </ion-list-header>
+  </ion-list>
+
+  <ion-item>
+    <ion-label position="fixed">Input</ion-label>
+    <!-- ngModel lager input i tekst feltet og bliver kaldt i ts filen -->
+    <ion-input type="text" [(ngModel)]="input" placeholder="placeholder"></ion-input>
+    <!-- Kanp der køre addData i ts filen med det der er i input -->
+    <ion-button slot="end" size="small"(click)="addAlertConfirm()">Send</ion-button>
+  </ion-item>
+
+  <!-- Liste Header -->
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-label>
+        <b>Liste</b>
+      </ion-label>
+    </ion-list-header>
+  </ion-list>
+
+
+
+ <ion-list>
+   <!-- Deklarere name af listData og i genkender index af elementet-->
+  <ion-item *ngFor="let name of listData; let i = index;">
+    <!-- Kalder removeitem og fjerner det der står -->
+    <ion-button slot="end" color="danger" (click)="removeAlertConfirm(name, i)">Delete</ion-button>
+    <!-- Viser det der er i databasen -->
+    <ion-label>{{ name }}</ion-label>
+  </ion-item>
+</ion-list>
+
+</ion-content>

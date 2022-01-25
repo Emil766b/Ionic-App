@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lokation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lokation</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<!-- Kanp der kører getCurrentCoordinates og viser koordinater -->
+ <ion-button (click)="getCurrentCoordinates()" expand="block" color="secondary"> Få lokation </ion-button>
+
+<!-- koordinater header -->
+<ion-list>
+<ion-list-header>
+  <ion-label>koordinater</ion-label>
+</ion-list-header>
+
+<!-- Latitue -->
+<ion-item>
+  <ion-label>
+    Latitue
+  </ion-label>
+  <!-- Viser hvad Latitue er -->
+  <ion-list slot="end">{{latitude}}</ion-list>
+</ion-item>
+
+<!-- longitude -->
+<ion-item>
+  <ion-label>
+    Longitude
+  </ion-label>
+  <!-- Viser hvad longitude er -->
+  <ion-list slot="end">{{longitude}}</ion-list>
+</ion-item>
+</ion-list> 
+
+<!-- Api Header-->
+<ion-list-header>
+  <ion-label>Api Liste</ion-label>
+</ion-list-header>
+
+<!-- api -->
+<ion-item>
+  <ion-list>
+    <ion-item *ngFor="let api of apis">
+      <!-- Viser titler fra api -->
+      <ion-label >{{api.title}} </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-item>
+
+<!-- Api link header-->
+<ion-list-header>
+  <ion-label>Api Link</ion-label>
+</ion-list-header>
+
+<!-- Api link der åbner en webbrowser -->
+<ion-item>
+  <ion-list>
+    <a href="https://ghibliapi.herokuapp.com/#"> Studio Ghibli Api Link</a>
+  </ion-list>
+</ion-item>
+</ion-content>
