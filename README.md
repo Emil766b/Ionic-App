@@ -2,7 +2,7 @@
 
 Dette er en opgave der har opfyldt de nedståne krav
 
--Det skal være en hybrid eller native app
+- Det skal være en hybrid eller native app
 -Der skal være forbindelse til en server. 
 -Der skal kunne gemmes data på enheden. 
 -Der skal være dynamiske lister. 
