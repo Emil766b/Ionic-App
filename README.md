@@ -1,6 +1,6 @@
 # Ionic-App
 
-Dette er en opgave der har opfyldt de nedståne krav
+Dette er en app der er lavet med Ionic og Angular. Den har opfyldt de nedståne krav
 
 - Det skal være en hybrid eller native app
 - Der skal være forbindelse til en server. 
